@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Table() {
   return (
-    <div className="overflow-scroll sm:overflow-x-auto px-10 max-x-full">
+    <div className="overflow-scroll sm:overflow-x-auto p-10 max-x-full">
       <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
         <thead className="text-left">
           <tr>
