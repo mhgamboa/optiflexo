@@ -18,17 +18,17 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-wrap gap-4 text-center mx-auto sm:mx-0">
             <a
-              href="#"
+              href="#contactar"
               className="mx-auto sm:mx-0 block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
             >
-              Contàctanos
+              Contactarnos
             </a>
 
             <a
-              href="#"
+              href="#aprender"
               className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
             >
-              Aprende Màs
+              Aprender Màs
             </a>
           </div>
         </div>

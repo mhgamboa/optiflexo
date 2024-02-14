@@ -10,12 +10,12 @@ export default function Header() {
             <Image src="/logo.png" alt="logo" sizes="100%, 100%" fill />
           </div>
           <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-            <button
-              className="block rounded-lg bg-rose-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring"
-              type="button"
+            <a
+              className="hidden sm:block rounded-lg bg-rose-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-rose-700 focus:outline-none focus:ring"
+              href="#contactar"
             >
-              Contàctanos
-            </button>
+              Contactarnos
+            </a>
           </div>
         </div>
       </div>
