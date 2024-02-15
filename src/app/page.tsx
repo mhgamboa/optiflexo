@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Contact from "@/components/index/Contact";
 import Features from "@/components/index/Features";
@@ -18,6 +19,7 @@ export default function Home() {
         </div>
         <Contact />
       </main>
+      <Footer />
     </>
   );
 }
