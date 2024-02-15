@@ -95,24 +95,43 @@ export const table1 = [
 
 export const table2 = [
   {
-    tipo: "Proceso 175 - 200 LPI",
-    values: ["900-1200", "1.0-2.2"],
+    tipo: "Proceso 175 – 200 LPI",
+    values: ["900 – 1200", "1.0 – 2.2"],
   },
   {
     tipo: "Proceso 150 LPI",
-    values: ["700-1200", "1.2-2.4"],
+    values: ["700 – 1200", "1.2 – 2.4"],
   },
   {
-    tipo: "Proceso 120 - 133 LPI",
-    values: ["500-1200", "1.6-2.6"],
+    tipo: "Proceso 120 – 133 LPI",
+    values: ["500 – 1200", "1.6 – 2.6"],
   },
   {
-    tipo: "Proceso 85 - 120",
-    values: ["500-800", "2.0-4.0"],
+    tipo: "Proceso 85 – 120",
+    values: ["500 – 800", "2.0 – 4.0"],
   },
   {
     tipo: "Pantalla / Sòlido",
-    values: ["440-700", "4.0-6.0"],
+    values: ["440 – 700", "4.0 – 6.0"],
+  },
+  {
+    tipo: "Pantalla / Texto",
+    values: ["360 – 600", "3.0 – 5.0"],
+  },
+  {
+    tipo: "Lìnea / Texto",
+    values: ["300 – 500", "3.5 – 6.0"],
+  },
+  {
+    tipo: "Lìnea / Sòlido",
+    values: ["250 – 500", "4.0 – 7.8"],
+  },
+  {
+    tipo: "Sòlido",
+    values: ["200 – 400", "5.0 – 9.0"],
+  },
+  {
+    tipo: "Sòlido / Barniz",
+    values: ["180 – 400", "6.0 – 13.0"],
   },
 ];
-// à, è, ì, ò, ù, À, È, Ì, Ò, Ù;
