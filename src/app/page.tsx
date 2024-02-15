@@ -12,8 +12,10 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
-        <Table1 />
-        <Table2 />
+        <div className="flex flex-wrap justify-center">
+          <Table1 />
+          <Table2 />
+        </div>
         <Contact />
       </main>
     </>

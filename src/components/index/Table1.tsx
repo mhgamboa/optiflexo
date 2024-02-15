@@ -3,8 +3,10 @@ import { table1 } from "./data";
 
 export default function Table() {
   return (
-    <div className="overflow-scroll sm:overflow-x-auto p-10 max-x-full">
-      <h2 className="text-3xl font-bold sm:text-4xl text-center pb-6">Grabados Anilox</h2>
+    <div className="overflow-scroll no-scrollbar sm:overflow-x-auto p-10 max-x-full">
+      <h2 className="text-3xl font-bold sm:text-4xl text-center pb-6 text-rose-600">
+        Grabados Anilox
+      </h2>
 
       <table className="mx-auto divide-y-2 divide-gray-200 bg-white text-sm">
         <thead className="text-left lg:text-lg">
