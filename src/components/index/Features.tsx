@@ -185,7 +185,7 @@ export default function Features() {
             href="#contactar"
             className="inline-block rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-rose-700 focus:outline-none focus:ring focus:ring-yellow-400"
           >
-            Contàctenos Hoy
+            Contactarnos
           </a>
         </div>
       </div>
