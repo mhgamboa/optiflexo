@@ -1,6 +1,29 @@
 import React from "react";
+import { EmailTemplate } from "@/components/email/email-template";
+import { Resend } from "resend";
 
-export default function Contact() {
+export default async function Contact() {
+  async function sendEmail(formData: FormData) {
+    "use server";
+
+    const rawFormData = {
+      customerId: formData.get("email"),
+      amount: formData.get("subject"),
+      status: formData.get("message"),
+    };
+    console.log(rawFormData);
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    const { data } = await resend.emails.send({
+      from: "Acme <onboarding@resend.dev>",
+      to: "delivered@resend.dev",
+      subject: "Hello World",
+      react: EmailTemplate({ firstName: "John" }),
+    });
+
+    console.log(data);
+  }
+
   return (
     <section className="bg-rose-700" id="contactar">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -11,13 +34,14 @@ export default function Contact() {
           {/* à, è, ì, ò, ù, À, È, Ì, Ò, Ù */}
           ¿Còmo le podemos ayudar? Contàctenos hoy, y le mandamos un email.
         </p>
-        <form action="#" className="space-y-8">
+        <form action={sendEmail} className="space-y-8">
           <div>
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">
               Su Email
             </label>
             <input
               type="email"
+              name="email"
               id="email"
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500 shadow-sm-light"
               placeholder="nombre@email.com"
@@ -31,6 +55,7 @@ export default function Contact() {
             <input
               type="text"
               id="subject"
+              name="subject"
               className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500 shadow-sm-light"
               placeholder="Diganos como le podemos ayudar"
               required
@@ -42,6 +67,7 @@ export default function Contact() {
             </label>
             <textarea
               id="message"
+              name="message"
               rows={6}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500"
               placeholder="Ponga su mensaje aquì..."
