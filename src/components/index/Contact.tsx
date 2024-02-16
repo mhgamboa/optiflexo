@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { toast } from "sonner";
 import sendEmail from "@/actions/sendEmail";
 
 export default function Contact() {
@@ -17,7 +18,11 @@ export default function Contact() {
 
     try {
       await sendEmail({ name, email, subject, message });
-      setEmailSent(true); //Prevent multiple resends
+      // setEmailSent(true); //Prevent multiple resends
+      toast.success("¡Lo recibimos!", {
+        description: "Te Mandamos un mensaje en 2-3 días hábiles",
+        duration: 5000,
+      });
     } catch (e) {
       console.log(e);
     }
