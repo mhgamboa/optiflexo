@@ -2,22 +2,21 @@
 import { EmailTemplate } from "@/components/email/email-template";
 import { Resend } from "resend";
 
-export default async function sendEmail(formData: FormData) {
-  "use server";
+type Input = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
-  const rawFormData = {
-    customerId: formData.get("email"),
-    amount: formData.get("subject"),
-    status: formData.get("message"),
-  };
-  console.log(rawFormData);
+export default async function sendEmail({ name, email, subject, message }: Input) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   const { data } = await resend.emails.send({
     from: "Acme <onboarding@resend.dev>",
     to: "delivered@resend.dev",
-    subject: "Hello World",
-    react: EmailTemplate({ firstName: "John" }),
+    subject: subject,
+    react: EmailTemplate({ name, email, message }),
   });
 
   console.log(data);

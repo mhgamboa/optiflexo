@@ -1,29 +1,27 @@
-import React from "react";
-import { EmailTemplate } from "@/components/email/email-template";
-import { Resend } from "resend";
+"use client";
+import { useState } from "react";
+import sendEmail from "@/actions/sendEmail";
 
-export default async function Contact() {
-  async function sendEmail(formData: FormData) {
-    "use server";
+export default function Contact() {
+  const [emailSent, setEmailSent] = useState(false);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    const rawFormData = {
-      customerId: formData.get("email"),
-      amount: formData.get("subject"),
-      status: formData.get("message"),
-    };
-    console.log(rawFormData);
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    // Get form Data
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
 
-    const { data } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: "delivered@resend.dev",
-      subject: "Hello World",
-      react: EmailTemplate({ firstName: "John" }),
-    });
-
-    console.log(data);
-  }
-
+    try {
+      // Send form Data to Resend
+      await sendEmail({ name, email, subject, message });
+    } catch (e) {
+      console.log(e);
+    }
+  };
   return (
     <section className="bg-rose-700" id="contactar">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -34,7 +32,20 @@ export default async function Contact() {
           {/* à, è, ì, ò, ù, À, È, Ì, Ò, Ù */}
           ¿Còmo le podemos ayudar? Contàctenos hoy, y le mandamos un email.
         </p>
-        <form action={sendEmail} className="space-y-8">
+        <form onSubmit={handleSubmit} className="space-y-8">
+          <div>
+            <label htmlFor="name" className="block mb-2 text-sm font-medium text-white">
+              Su Nombre
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500 shadow-sm-light"
+              placeholder="Nombre"
+              required
+            />
+          </div>
           <div>
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">
               Su Email
