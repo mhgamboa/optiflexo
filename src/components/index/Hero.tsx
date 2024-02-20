@@ -1,19 +1,24 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="sm:h-80dvh relative bg-[url(/steel.jpg)] bg-cover bg-center bg-no-repeat">
-      <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
+    <section className="relative bg-[url(/steel.png)] bg-cover bg-center bg-no-repeat">
+      <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 sm:bg-gradient-to-r"></div>
 
-      <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-        <div className="max-w-xl text-center sm:text-left rtl:sm:text-right mx-auto sm:mx-0">
+      <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:py-0 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+        <div className="max-w-xl text-center sm:text-left mx-auto sm:mx-0 space-y-6">
+          <div className="relative text-center sm:text-left h-24 w-36 mx-auto sm:mx-0">
+            <Image src="/logo.png" alt="logo" sizes="100%, 100%" fill />
+          </div>
           <h1 className="text-3xl font-extrabold sm:text-5xl">
-            Encuentra tus
-            <strong className="block font-extrabold text-rose-700"> Rodillos </strong>
+            La Opción
+            <strong className="font-extrabold text-rose-700"> Optima </strong>
+            para Anilox
           </h1>
 
           <p className="mt-4 max-w-lg sm:text-xl/relaxed mx-auto sm:mx-0">
-            La Opción Optima para Rodillos y Mangas Anilox de Banda Estrecha y Media.
+            Rodillos y Mangas Anilox de Alto Rendimiento para Banda Estrecha y Media.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-center mx-auto sm:mx-0">
