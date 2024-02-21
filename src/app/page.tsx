@@ -9,7 +9,7 @@ import Table2 from "@/components/index/Table2";
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>
         <Hero />
         <Features />

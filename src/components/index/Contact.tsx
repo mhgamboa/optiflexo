@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import sendEmail from "@/actions/sendEmail";
 
 export default function Contact() {
-  const [emailSent, setEmailSent] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -17,14 +17,16 @@ export default function Contact() {
     const message = formData.get("message") as string;
 
     try {
+      setButtonDisabled(true);
       await sendEmail({ name, email, subject, message });
-      // setEmailSent(true); //Prevent multiple resends
       toast.success("¡Lo recibimos!", {
         description: "Te Mandamos un mensaje en 2-3 días hábiles",
         duration: 5000,
       });
     } catch (e) {
       console.log(e);
+    } finally {
+      setButtonDisabled(false);
     }
   };
   return (
@@ -92,7 +94,7 @@ export default function Contact() {
           <button
             type="submit"
             className="py-3 px-5 text-sm font-semibold text-center bg-white text-rose-600 rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 focus:ring-primary-800 disabled:bg-gray-400 disabled:text-black disabled:font-normal"
-            disabled={emailSent}
+            disabled={buttonDisabled}
           >
             Manda Un Mensaje
           </button>

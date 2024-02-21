@@ -1,5 +1,6 @@
 "use server";
-import { EmailTemplate } from "@/components/email/email-template";
+import { templateHector } from "@/components/email/templateHector";
+import { templateClient } from "@/components/email/templateClient";
 import { Resend } from "resend";
 
 type Input = {
@@ -12,12 +13,19 @@ type Input = {
 export default async function sendEmail({ name, email, subject, message }: Input) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
-  const { data } = await resend.emails.send({
-    from: "Acme <onboarding@resend.dev>",
-    to: "delivered@resend.dev",
-    subject: subject,
-    react: EmailTemplate({ name, email, message }),
+  const { data: emailHector } = await resend.emails.send({
+    from: "Optiflexo <info@optiflexo.com>",
+    to: "hector@optiflexo.com",
+    subject: `${name} mandò un mensaje en tu website`,
+    react: templateHector({ name, email, message }),
   });
 
-  console.log(data);
+  const { data: emailClient } = await resend.emails.send({
+    from: "Optiflexo <info@optiflexo.com>",
+    to: email,
+    subject: subject,
+    react: templateClient({ name, email, message }),
+  });
+
+  console.log(emailHector, emailClient);
 }

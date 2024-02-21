@@ -1,12 +1,8 @@
 import {
   Body,
-  Button,
   Container,
   Head,
-  Hr,
   Html,
-  Img,
-  Link,
   Preview,
   Row,
   Section,
@@ -20,7 +16,7 @@ type EmailTemplateProps = {
   message: string;
 };
 
-export const EmailTemplate = ({ name, email, message }: EmailTemplateProps) => {
+export const templateHector = ({ name, email, message }: EmailTemplateProps) => {
   return (
     <Html>
       <Head />
@@ -29,7 +25,7 @@ export const EmailTemplate = ({ name, email, message }: EmailTemplateProps) => {
         <Container style={container}>
           <Section style={{ paddingBottom: "20px" }}>
             <Row>
-              <Text style={heading}>{name} sent you a message:</Text>
+              <Text style={heading}>{name} sent you a message on your website:</Text>
               <Text style={review}>{message}</Text>
               <Text style={paragraph}>The email they provided is {email}</Text>
             </Row>
