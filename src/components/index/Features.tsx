@@ -34,14 +34,14 @@ export default function Features() {
           />
           <FeatureCard
             imgSrc="/cells/optiE.png"
-            imgAlt="Hexagon Cell Shape"
+            imgAlt="Rectangle Cell Shape"
             headingText1="OPTI E"
             headingText2="Grabados de cèlulas alargadas"
             description="Mayor transferencia de tinta con una mejor cobertura do slidos."
           />
           <FeatureCard
             imgSrc="/cells/optiQ.png"
-            imgAlt="Hexagon Cell Shape"
+            imgAlt="Diamond Cell Shape"
             headingText1="OPTI Q"
             headingText2="Grabados en forma diamante"
             description="Diseñados para remplazar los grabados mecànicos. Ideal para la conversiòn de rodillos de cromo a Anilox grabado con làser de ceràmica."
@@ -51,7 +51,7 @@ export default function Features() {
         <div className="mt-8 grid grid-cols-1 gap-8">
           <FeatureCard
             imgSrc="/cells/optiZ.png"
-            imgAlt="Hexagon Cell Shape"
+            imgAlt="Curve Cell Shape"
             headingText1="OPTI Z Grabado"
             headingText2="de canal controlado"
             description="Liberaciòn òptima de la tinta. Ideal para impresiòn combinada (pantallas, sòlidos,
@@ -61,7 +61,7 @@ export default function Features() {
           />
           <FeatureCard
             imgSrc="/cells/optiT.png"
-            imgAlt="Hexagon Cell Shape"
+            imgAlt="Line Cell Shape"
             headingText1="OPTI T"
             headingText2="Grabados Trihelical"
             description="Rendimiento comprobado con recubrimientos de acabados táctiles y elevados. Ideal
