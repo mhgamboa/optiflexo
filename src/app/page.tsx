@@ -18,8 +18,8 @@ export default function Home() {
           <Table1 />
           <Table2 />
         </div>
-        <Contact />
         <Paragraph />
+        <Contact />
       </main>
       <Footer />
     </>
