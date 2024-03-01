@@ -25,6 +25,9 @@ export default function Contact() {
       });
     } catch (e) {
       console.log(e);
+      alert(
+        "Hubo un error, y no podimos recibir tu mensaje. Por favor, mandenos un email a hector@optiflexo.com"
+      );
     } finally {
       setButtonDisabled(false);
     }
