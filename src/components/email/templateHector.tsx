@@ -20,14 +20,14 @@ export const templateHector = ({ name, email, message }: EmailTemplateProps) => 
   return (
     <Html>
       <Head />
-      <Preview>{name} sent you a message</Preview>
+      <Preview>{name} te mandò un mensaje</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={{ paddingBottom: "20px" }}>
             <Row>
-              <Text style={heading}>{name} sent you a message on your website:</Text>
+              <Text style={heading}>{name} te mandò un mensaje en tu website:</Text>
               <Text style={review}>{message}</Text>
-              <Text style={paragraph}>The email they provided is {email}</Text>
+              <Text style={paragraph}>Su email es: {email}</Text>
             </Row>
           </Section>
         </Container>

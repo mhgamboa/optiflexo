@@ -20,6 +20,13 @@ export default async function sendEmail({ name, email, subject, message }: Input
     react: templateHector({ name, email, message }),
   });
 
+  const { data: emailInfo } = await resend.emails.send({
+    from: "Optiflexo <info@optiflexo.com>",
+    to: "info@optiflexo.com",
+    subject: `${name} mandò un mensaje en tu website`,
+    react: templateHector({ name, email, message }),
+  });
+
   const { data: emailClient } = await resend.emails.send({
     from: "Optiflexo <info@optiflexo.com>",
     to: email,
@@ -27,5 +34,5 @@ export default async function sendEmail({ name, email, subject, message }: Input
     react: templateClient({ name, email, message }),
   });
 
-  console.log(emailHector, emailClient);
+  console.log(emailHector, emailInfo, emailClient);
 }
