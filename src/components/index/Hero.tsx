@@ -19,7 +19,7 @@ export default function Hero({ lang }: { lang?: string }) {
 
           <p className="mt-4 max-w-lg sm:text-xl/relaxed mx-auto sm:mx-0">
             {lang === "en"
-              ? "High Performance Anilox Rollers and Sleeves for Narrow and Medium Band."
+              ? "High Performance Anilox Rollers and Sleeves for Narrow and Medium Bands."
               : "Rodillos y Mangas Anilox de Alto Rendimiento para Banda Estrecha y Media."}
           </p>
 
