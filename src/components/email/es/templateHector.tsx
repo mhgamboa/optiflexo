@@ -1,13 +1,4 @@
-import {
-  Body,
-  Container,
-  Head,
-  Html,
-  Preview,
-  Row,
-  Section,
-  Text,
-} from "@react-email/components";
+import { Body, Container, Head, Html, Preview, Row, Section, Text } from "@react-email/components";
 import * as React from "react";
 
 type EmailTemplateProps = {
@@ -38,8 +29,7 @@ export const templateHector = ({ name, email, message }: EmailTemplateProps) => 
 
 const main = {
   backgroundColor: "#ffffff",
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
 };
 
 const container = {

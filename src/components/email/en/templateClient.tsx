@@ -1,13 +1,4 @@
-import {
-  Body,
-  Container,
-  Head,
-  Html,
-  Preview,
-  Row,
-  Section,
-  Text,
-} from "@react-email/components";
+import { Body, Container, Head, Html, Preview, Row, Section, Text } from "@react-email/components";
 import * as React from "react";
 
 type EmailTemplateProps = {
@@ -20,19 +11,17 @@ export const templateClient = ({ name, email, message }: EmailTemplateProps) => 
   return (
     <Html>
       <Head />
-      <Preview>Recibimos su mensaje!</Preview>
+      <Preview>We received your message!</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={{ paddingBottom: "20px" }}>
             <Row>
-              <Text style={heading}>Hola {name},</Text>
-              <Text style={paragraph}>Recibimos su mensaje:</Text>
+              <Text style={heading}>Hello {name},</Text>
+              <Text style={paragraph}>We received your message:</Text>
               <Text style={review}>{message}</Text>
-              <Text style={paragraph}>Respondemos en 2-3 días hábiles a su email: {email}.</Text>
-              <Text style={paragraph}>
-                Si necesitas algo mas, puede responder a este email. Gracais por su tiempo,
-              </Text>
-              <Text style={paragraph}>- Equipo Optiflexo</Text>
+              <Text style={paragraph}>We&apos;ll respond to your email {email} within 2-3 business days.</Text>
+              <Text style={paragraph}>If you need anything else, you can reply to this email. Thank you for your time,</Text>
+              <Text style={paragraph}>- Optiflexo Team</Text>
             </Row>
           </Section>
         </Container>
@@ -43,8 +32,7 @@ export const templateClient = ({ name, email, message }: EmailTemplateProps) => 
 
 const main = {
   backgroundColor: "#ffffff",
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
 };
 
 const container = {
