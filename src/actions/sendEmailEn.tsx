@@ -1,6 +1,6 @@
 "use server";
-import { templateHector } from "@/components/email/templateHector";
-import { templateClient } from "@/components/email/templateClient";
+import { templateHector } from "@/components/email/en/templateHector";
+import { templateClient } from "@/components/email/en/templateClient";
 import { Resend } from "resend";
 
 type Input = {
@@ -16,14 +16,14 @@ export default async function sendEmail({ name, email, subject, message }: Input
   const { data: emailHector } = await resend.emails.send({
     from: "Optiflexo <info@optiflexo.com>",
     to: "hector@optiflexo.com",
-    subject: `${name} mandò un mensaje en tu website`,
+    subject: `${name} sent a message on your website`,
     react: templateHector({ name, email, message }),
   });
 
   const { data: emailInfo } = await resend.emails.send({
     from: "Optiflexo <info@optiflexo.com>",
     to: "info@optiflexo.com",
-    subject: `${name} mandò un mensaje en tu website`,
+    subject: `${name} sent a message on your website`,
     react: templateHector({ name, email, message }),
   });
 

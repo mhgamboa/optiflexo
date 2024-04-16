@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Hero() {
+export default function Hero({ lang }: { lang?: string }) {
   return (
     <section className="relative bg-[url(/roller.jpg)] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 sm:bg-gradient-to-r"></div>
@@ -12,13 +12,15 @@ export default function Hero() {
             <Image src="/logo.png" alt="logo" sizes="100%, 100%" fill />
           </div>
           <h1 className="text-3xl font-extrabold sm:text-5xl">
-            La Opción
-            <strong className="font-extrabold text-rose-700"> Optima </strong>
-            para Anilox
+            {lang === "en" ? "The" : "La Opción"}
+            <strong className="font-extrabold text-rose-700"> {lang === "en" ? "Optimal" : "Optima"} </strong>
+            {lang === "en" ? "option for Anilox" : "para Anilox"}
           </h1>
 
           <p className="mt-4 max-w-lg sm:text-xl/relaxed mx-auto sm:mx-0">
-            Rodillos y Mangas Anilox de Alto Rendimiento para Banda Estrecha y Media.
+            {lang === "en"
+              ? "High Performance Anilox Rollers and Sleeves for Narrow and Medium Band."
+              : "Rodillos y Mangas Anilox de Alto Rendimiento para Banda Estrecha y Media."}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-center mx-auto sm:mx-0">
@@ -26,14 +28,14 @@ export default function Hero() {
               href="#contactar"
               className="mx-auto sm:mx-0 block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
             >
-              Contactarnos
+              {lang === "en" ? "Contact Us" : "Contactarnos"}
             </a>
 
             <a
               href="#aprender"
               className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
             >
-              Aprender Màs
+              {lang === "en" ? "Learn More" : "Aprender Màs"}
             </a>
           </div>
         </div>

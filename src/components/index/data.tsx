@@ -96,42 +96,52 @@ export const table1 = [
 export const table2 = [
   {
     tipo: "Proceso 175 – 200 LPI",
+    type: "Process 175 – 200 LPI",
     values: ["900 – 1200", "1.0 – 2.2"],
   },
   {
     tipo: "Proceso 150 LPI",
+    type: "Process 150 LPI",
     values: ["700 – 1200", "1.2 – 2.4"],
   },
   {
     tipo: "Proceso 120 – 133 LPI",
+    type: "Process 120 – 133 LPI",
     values: ["500 – 1200", "1.6 – 2.6"],
   },
   {
     tipo: "Proceso 85 – 120",
+    type: "Process 85 – 120",
     values: ["500 – 800", "2.0 – 4.0"],
   },
   {
     tipo: "Pantalla / Sòlido",
+    type: "Screen / Solid",
     values: ["440 – 700", "4.0 – 6.0"],
   },
   {
     tipo: "Pantalla / Texto",
+    type: "Screen / Text",
     values: ["360 – 600", "3.0 – 5.0"],
   },
   {
     tipo: "Lìnea / Texto",
+    type: "Line / Text",
     values: ["300 – 500", "3.5 – 6.0"],
   },
   {
     tipo: "Lìnea / Sòlido",
+    type: "Line / Solid",
     values: ["250 – 500", "4.0 – 7.8"],
   },
   {
     tipo: "Sòlido",
+    type: "Solid",
     values: ["200 – 400", "5.0 – 9.0"],
   },
   {
     tipo: "Sòlido / Barniz",
+    type: "solid / Varnish",
     values: ["180 – 400", "6.0 – 13.0"],
   },
 ];

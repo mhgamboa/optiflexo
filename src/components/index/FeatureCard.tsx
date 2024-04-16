@@ -9,16 +9,10 @@ type Props = {
   description: string;
 };
 
-export default function FeatureCard({
-  imgSrc,
-  imgAlt,
-  headingText1,
-  headingText2,
-  description,
-}: Props) {
+export default function FeatureCard({ imgSrc, imgAlt, headingText1, headingText2, description }: Props) {
   return (
     <div className="flex rounded-xl border border-gray-800 space-x-4 p-8 shadow-xl transition">
-      <div className="relative w-36 h-1/2 sm:h-full my-auto">
+      <div className="relative md:w-36 min-w-12 h-1/2 sm:h-full my-auto">
         <Image src={imgSrc} className="object-cover rounded-xl" fill={true} alt={imgAlt} />
       </div>
       <div className="flex flex-col">
