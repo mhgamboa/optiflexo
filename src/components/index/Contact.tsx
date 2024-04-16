@@ -20,7 +20,7 @@ export default function Contact({ lang }: { lang?: string }) {
 
     try {
       if (lang !== "en") await sendEmailEs({ name, email, subject, message });
-      if (lang !== "en") await sendEmailEn({ name, email, subject, message });
+      if (lang === "en") await sendEmailEn({ name, email, subject, message });
       lang === "en"
         ? toast.success("We got it!", {
             description: "We'll respond to you in 2-3 business days",
