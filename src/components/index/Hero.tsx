@@ -1,10 +1,20 @@
 import React from "react";
 import Image from "next/image";
+import roller from "@/assets/roller.png";
 
 export default function Hero({ lang }: { lang?: string }) {
+  // Create a style object with the background image using the imported roller
+  const sectionStyle = {
+    backgroundImage: `url(${roller.src})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
   return (
-    <section className="relative bg-[url(/roller.jpg)] bg-cover bg-center bg-no-repeat">
-      <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 sm:bg-gradient-to-r"></div>
+    // <section className="relative bg-[url(/roller.jpg)] bg-cover bg-center bg-no-repeat">
+    <section className="relative" style={sectionStyle}>
+      {/* formerly sm:from-white/95 sm:to-white/25 */}
+      <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/65 sm:to-white/25 sm:bg-gradient-to-r" />
 
       <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:py-0 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
         <div className="max-w-xl text-center sm:text-left mx-auto sm:mx-0 space-y-6">
@@ -13,7 +23,10 @@ export default function Hero({ lang }: { lang?: string }) {
           </div>
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             {lang === "en" ? "The" : "La Opción"}
-            <strong className="font-extrabold text-rose-700"> {lang === "en" ? "Optimal" : "Optima"} </strong>
+            <strong className="font-extrabold text-rose-700">
+              {" "}
+              {lang === "en" ? "Optimal" : "Optima"}{" "}
+            </strong>
             {lang === "en" ? "option for Anilox" : "para Anilox"}
           </h1>
 
