@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import roller from "@/assets/roller.png";
 
-export default function Hero({ lang = "en" }) {
+export default function Hero({ lang = "es" }) {
   const translations = {
     en: {
       titleStart: "The",
