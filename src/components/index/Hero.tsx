@@ -30,7 +30,7 @@ export default function Hero({ lang = "es" }) {
     <section className="relative min-h-[80vh] lg:min-h-[70vh]">
       {/* Background image for mobile/tablet */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden mt-10"
         style={{ backgroundImage: `url(${roller.src})` }}
       />
 
