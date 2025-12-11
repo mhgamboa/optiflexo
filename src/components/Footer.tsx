@@ -10,7 +10,7 @@ export default function Footer({ lang }: { lang?: string }) {
         <div>info@optiflexo.com</div>
         <div>Tel. +1909-579-9971</div>
       </div>
-      <p className="text-xs w-full text-right">
+      {/* <p className="text-xs w-full text-right">
         {lang === "en" ? "Image provided by " : "Imagen proporcionada por "}
         <a
           href="https://commons.wikimedia.org/wiki/File:Flexographic_print_roller_with_anilox.jpg"
@@ -18,7 +18,7 @@ export default function Footer({ lang }: { lang?: string }) {
         >
           wikimedia
         </a>
-      </p>
+      </p> */}
     </footer>
   );
 }
