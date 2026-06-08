@@ -9,7 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-email/components": "^0.0.36",
+    "@react-email/components": "^1.0.12",
     "next": "15.5.19",
     "react": "19.2.7",
     "react-dom": "19.2.7",
@@ -20,15 +20,17 @@
     "@types/node": "^20",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^9",
+    "@typescript-eslint/eslint-plugin": "^8.61.0",
+    "@typescript-eslint/parser": "^8.61.0",
+    "autoprefixer": "^10.5.0",
+    "eslint": "^9.39.4",
     "eslint-config-next": "15.5.19",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5"
   },
   "overrides": {
-    "glob": "^11.1.0",
+    "glob": "^13.0.6",
     "prismjs": "^1.30.0",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3"
